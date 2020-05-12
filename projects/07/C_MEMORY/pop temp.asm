@@ -1,0 +1,10 @@
+@5+i
+D=A
+@addr
+M=D
+@SP
+AM=M-1
+D=M
+@addr
+A=M
+M=D

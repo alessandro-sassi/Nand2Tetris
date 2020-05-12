@@ -1,0 +1,15 @@
+class Comp {
+
+    function String choose() {
+        var String choice;
+        var int r;
+        let choice = String.new(8);
+        let r = Random.randRange(149);
+        if (r < 50) { let choice = "ROCK"; }
+        else {
+            if (r > 99) { let choice = "PAPER"; }
+            else { let choice = "SCISSORS"; }  
+        }
+        return choice;
+    }
+}

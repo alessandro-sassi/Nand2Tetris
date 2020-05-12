@@ -1,0 +1,23 @@
+class Str {
+
+    function boolean strcmp(String string1, String string2) {
+        var String s1, s2;
+        var int s1_len, s2_len, i;
+        let s1 = string1;
+        let s2 = string2;
+        let s1_len = s1.length();
+        let s2_len = s2.length();
+        if ( ~(s1_len = s2_len) ) {
+            return false;
+        }
+        else {
+            while (i < s1_len) {
+                if ( ~(s1.charAt(i) = s2.charAt(i)) ) {
+                    return false;
+                }
+                let i = i + 1;
+            }
+            return true;
+        }
+    }
+}

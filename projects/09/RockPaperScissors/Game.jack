@@ -1,0 +1,107 @@
+class Game {
+
+    static int user_score, comp_score;
+
+    function void play() {
+        var String user, comp;
+        let user = User.choose();
+        let comp = Comp.choose();
+
+        /** Print choices */
+        do Output.printString(user);
+        do Output.printString(" vs ");
+        do Output.printString(comp);
+        do Output.println();
+
+        if (Str.strcmp(user, comp)) {
+            do Output.printString("DRAW!");
+            }
+        else {
+            if (Str.strcmp(user, "ROCK")) {
+                if (Str.strcmp(comp, "PAPER")) {
+                    do Output.printString("COMPUTER WINS!");
+                    let comp_score = comp_score + 1;
+                }
+                if (Str.strcmp(comp, "SCISSORS")) {
+                    do Output.printString("USER WINS!");
+                    let user_score = user_score + 1;
+                }
+            }
+            if (Str.strcmp(user, "PAPER")) {
+                if (Str.strcmp(comp, "ROCK")) {
+                    do Output.printString("USER WINS!");
+                    let user_score = user_score + 1;
+                }
+                if (Str.strcmp(comp, "SCISSORS")) {
+                    do Output.printString("COMPUTER WINS!");
+                    let comp_score = comp_score + 1;
+                }
+            }
+            if (Str.strcmp(user, "SCISSORS")) {
+                if (Str.strcmp(comp, "ROCK")) {
+                    do Output.printString("COMPUTER WINS!");
+                    let comp_score = comp_score + 1;
+                }
+                if (Str.strcmp(comp, "PAPER")) {
+                    do Output.printString("USER WINS!");
+                    let user_score = user_score + 1;
+                }
+            }
+        } // else
+        do Output.println();
+        do Game.score(user_score, comp_score);
+        do Output.println();
+        do user.dispose();
+        do comp.dispose();
+        return;
+
+    } // function game
+
+    function void game() {
+        var boolean exit;
+        var char play;
+        let exit = false;
+        while (~(exit)) {
+            do Output.printString("Press 'p' to play again or 'q' to exit the game: ");
+            let play = Keyboard.readChar();
+            do Screen.clearScreen();
+            do Output.moveCursor(0,0);
+            if (play = 81) {
+                let exit = true;
+            }
+            else {
+                if (play = 80) {
+                    do Game.play();
+                }
+            }
+        }
+
+        do Output.printString("Final ");
+        do Game.score(user_score, comp_score);
+        if (user_score > comp_score) {
+            do Output.printString("User wins the game!");
+        }
+        else {
+            if (user_score = comp_score) {
+                do Output.printString("It's a Draw!");
+            }
+            else {
+                do Output.printString("Computer wins the game!");
+            }
+        }
+        do Output.println();
+        return;
+    } // function game
+
+    function void score(int user_score, int comp_score) {
+        let user_score = user_score;
+        let comp_score = comp_score;
+        do Output.printString("Score: User ");
+        do Output.printInt(user_score);
+        do Output.printString(" - ");
+        do Output.printString("Computer ");
+        do Output.printInt(comp_score);
+        do Output.println();
+        return;
+    }
+} // class Game

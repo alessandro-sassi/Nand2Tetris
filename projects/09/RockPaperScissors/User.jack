@@ -1,0 +1,16 @@
+class User {
+
+    function char choose() {
+        var String choice;
+        let choice = String.new(8);
+        while (~((Str.strcmp(choice, "ROCK")) | (Str.strcmp(choice, "PAPER")) | (Str.strcmp(choice, "SCISSORS")))) {
+            let choice = Keyboard.readLine("Pick 'ROCK', 'PAPER', or 'SCISSORS': ");
+            do Screen.clearScreen();
+            do Output.moveCursor(0,0);
+        }
+        do Output.printString("You choosed ");
+        do Output.printString(choice);
+        do Output.println();
+        return choice;
+    }
+}

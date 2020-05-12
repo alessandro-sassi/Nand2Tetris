@@ -1,0 +1,12 @@
+@i
+D=A
+@segmentPointer
+D=D+M
+@addr
+M=D
+@SP
+AM=M-1
+D=M
+@addr
+A=M
+M=D
