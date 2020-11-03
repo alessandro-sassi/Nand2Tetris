@@ -5,6 +5,7 @@ Projects of the Nand2Tetris course described in https://www.nand2tetris.org/cour
 
 
 ## Summary of projects:
+- 
 #### Project 1: Boolean Logic
 Built logic gates, like And, Not, Or, Xor, Dmux, and so on, sing primitive NAND gates and the composite gates gradually built on top of them
 #### Project 2: Boolean Arithmetic
